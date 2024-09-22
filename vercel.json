@@ -13,5 +13,6 @@
       "dest": "/src/server.ts"
     }
   ],
+  "outputDirectory": "dist",
   "buildCommand": "npm install --force && npm run build"
 }
