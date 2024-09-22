@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/new" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path={"room/:roomId"} element={<TicTacToe />} />
       </Routes>
     </BrowserRouter>
