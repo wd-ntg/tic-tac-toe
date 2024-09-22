@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "socketio-server/server.ts",
+        "use": "@vercel/node",
+        "config": { "maxLambdaSize": "15mb" }
+      },
+      {
+        "src": "react-client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "react-client/build"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/socketio-server/server.ts"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/react-client/build/$1"
+      }
+    ]
+  }
+  
