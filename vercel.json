@@ -3,19 +3,17 @@
   "builds": [
     
     {
-      "src": "react-client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "/dist"
-      }
+      "src": "socketio-server/src/server.ts",
+      "use": "@vercel/node",
+      "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
     
     {
-      "src": "/(.*)",
-      "dest": "/react-client/dist/$1" 
+      "src": "/api/(.*)",
+      "dest": "/socketio-server/src/server.ts"
     }
   ],
-  "buildCommand": "npm install --force && npm run build "
+  "buildCommand": "cd socketio-server && npm install --force"
 }
