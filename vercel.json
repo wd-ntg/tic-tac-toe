@@ -1,19 +1,17 @@
 {
   "version": 2,
   "builds": [
-    
     {
-      "src": "socketio-server/src/server.ts",
+      "src": "/src/server.ts",
       "use": "@vercel/node",
       "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
-    
     {
       "src": "/api/(.*)",
-      "dest": "/socketio-server/src/server.ts"
+      "dest": "/src/server.ts"
     }
   ],
-  "buildCommand": "cd socketio-server && npm install --force && npm run build"
+  "buildCommand": "cd socketio-server && npm install --force"
 }
