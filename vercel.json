@@ -1,11 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "socketio-server/src/server.ts",
-      "use": "@vercel/node",
-      "config": { "maxLambdaSize": "15mb" }
-    },
+    
     {
       "src": "react-client/package.json",
       "use": "@vercel/static-build",
@@ -15,14 +11,11 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/socketio-server/src/server.ts"
-    },
+    
     {
       "src": "/(.*)",
       "dest": "/react-client/dist/$1" 
     }
   ],
-  "buildCommand": "cd react-client && npm install --force && npm run build && cd socketio-server && npm install --force"
+  "buildCommand": "npm install --force && npm run build "
 }
