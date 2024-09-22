@@ -10,7 +10,7 @@
         "src": "react-client/package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "react-client/build"
+          "distDir": "react-client/dist"
         }
       }
     ],
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/react-client/build/$1"
+        "dest": "/react-client/dist/$1" 
       }
     ],
     "buildCommand": "npm install --force && npm run build"
