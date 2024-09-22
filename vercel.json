@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "/src/server.ts",
+      "src": "src/server.ts",
       "use": "@vercel/node",
       "config": { "maxLambdaSize": "15mb" }
     }
@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/dist/server.js"
+      "dest": "dist/server.js"
     }
   ],
   "outputDirectory": "dist",
