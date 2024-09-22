@@ -13,5 +13,5 @@
       "dest": "/src/server.ts"
     }
   ],
-  "buildCommand": "cd socketio-server && npm install --force"
+  "buildCommand": "npm install --force && npm run build"
 }
