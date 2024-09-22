@@ -1,22 +1,16 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "src/server.ts",
-      "use": "@vercel/node",
-      "config": { "maxLambdaSize": "15mb" }
-    }
+      {
+          "src": "dist/server.js",
+          "use": "@vercel/node",
+          "config": { "includeFiles": ["dist/**"] }
+      }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "src/server.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ],
-  "outputDirectory": "dist",
-  "buildCommand": "npm install --force && npm run build"
+      {
+          "src": "/(.*)",
+          "dest": "dist/server.js"
+      }
+  ]
 }
