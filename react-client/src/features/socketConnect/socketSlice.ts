@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:9000'); // Thay bằng URL server của bạn
+const socket = io('https://tic-tac-toe-server-bdfp.onrender.com'); // Thay bằng URL server của bạn
 
 const socketSlice = createSlice({
   name: 'socket',
